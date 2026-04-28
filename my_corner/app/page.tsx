@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Header from "@/components/Layout/Header";
+import Header from "@/widgets/layout/Header";
 import Container from "@/app/Container";
-import SkillSection from "@/components/SkillsSection/SkillsSection";
-import ProjectCardSection from "@/components/ProjectCard/ProjectCardSection";
+import SkillSection from "@/widgets/skills-section/ui/SkillsSection";
+import ProjectCardSection from "@/widgets/projects-section/ui/ProjectCardSection";
 
 export const metadata: Metadata = {
   title: "Nathan Shalamberidze — Frontend Developer",

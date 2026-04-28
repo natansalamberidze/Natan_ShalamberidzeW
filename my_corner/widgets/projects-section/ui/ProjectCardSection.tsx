@@ -1,5 +1,5 @@
-import ProjectCard from "./ProjectCard"
-import { projects } from "@/data/projects";
+import ProjectCard from "@/entities/project/ui/ProjectCard";
+import { projects } from "@/entities/project/model/projects";
 
 
 export default function ProjectCardSection() {

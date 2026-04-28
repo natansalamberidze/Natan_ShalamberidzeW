@@ -1,4 +1,4 @@
-import { SkillCategory } from '@/types/skillstype'
+import { SkillCategory } from '@/entities/skill/skills_type'
 
 export const skills: SkillCategory [] = [
   {

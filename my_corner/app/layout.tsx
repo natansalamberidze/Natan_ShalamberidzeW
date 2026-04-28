@@ -1,5 +1,5 @@
-import "./globals.css";
-import Footer from "@/components/Layout/Footer";
+import './globals.css';
+import Footer from "@/widgets/layout/Footer";
 
 export const metadata = {
   title: "Mr Nathan Shalamberidze — Portfolio",

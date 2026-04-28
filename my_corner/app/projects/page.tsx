@@ -1,6 +1,6 @@
 import Container from "@/app/Container";
-import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import { projects } from "@/data/projects";
+import ProjectCard from "@/entities/project/ui/ProjectCard";
+import { projects } from "@/entities/project/model/projects";
 
 export default function ProjectsPage() {
   return (

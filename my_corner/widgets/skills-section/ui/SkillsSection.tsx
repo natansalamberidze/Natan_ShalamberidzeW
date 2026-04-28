@@ -1,5 +1,5 @@
-import { skills } from '@/data/skills'
-import SkillsColumn from "@/components/SkillsSection/SkillsColumn"
+import { skills } from '@/entities/skill/model/skills'
+import SkillsColumn from "@/widgets/skills-section/ui/SkillsColumn"
 
 export default function SkillsSection() {
   return (

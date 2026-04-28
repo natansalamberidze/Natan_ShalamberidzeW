@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Container from "@/app/Container";
-import { projects } from "@/data/projects";
+import { projects } from "@/entities/project/model/projects";
 
 type Props = {
   params: Promise<{

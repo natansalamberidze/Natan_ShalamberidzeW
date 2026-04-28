@@ -1,8 +1,8 @@
 'use client';
 import Link from "next/dist/client/link";
 import Image from "next/image";
-import { Icons } from "@/types/icontype";
-import { SocialLinks } from "@/data/icontypes";
+import { Icons } from "@/widgets/layout/icon_type";
+import { SocialLinks } from "@/widgets/layout/model/icontypes";
 
 function SocialIcon({ src, alt, href }: Icons) {
   return (

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Project } from "@/types/project";
+import { Project } from "@/entities/project/project_type";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
