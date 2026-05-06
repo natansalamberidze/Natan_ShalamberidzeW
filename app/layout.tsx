@@ -1,4 +1,4 @@
-import './globals.css';
+import './global.css';
 import Footer from "@/widgets/layout/Footer";
 
 export const metadata = {

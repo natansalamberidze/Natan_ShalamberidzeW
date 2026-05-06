@@ -35,7 +35,7 @@ export default function Home() {
         </div>
         <div className="relative">
           <Image
-            src="/shared/images/alien.svg"
+            src="/images/alien.svg"
             alt="alien"
             className="absolute pt-3"
             width={100}
