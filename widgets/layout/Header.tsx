@@ -80,7 +80,7 @@ export default function Header() {
   }, []);
   
   return (
-  <header className=" text-text-secondary ">
+  <header className=" text-text-secondary text-xl">
     <div className={`flex fixed top-0 left-0 right-0 z-1 justify-start bg-bg-primary/80 backdrop-blur-md 
       ${ isScrolled ? 'shadow-(--my-shadowform)' : 'shadow-none'}
     `}>

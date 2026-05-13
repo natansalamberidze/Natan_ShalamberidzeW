@@ -1,5 +1,5 @@
 import { skills } from '@/entities/skill/model/skills'
-import SkillsColumn from "@/widgets/skills-section/ui/SkillsColumn"
+import SkillsColumn from "@/pages/home/sections/SkillsColumn"
 
 export default function SkillsSection() {
   return (

@@ -26,39 +26,39 @@ function SocialIcon({ src, alt, href }: Icons) {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-800">
-      <section className="p-3">
-        <div className="border-4 rounded-b-4xl">
-          <div className="group perspective">
-            <div className="relative p-2 transition-transform duration-700 
-                            [transform-style:preserve-3d] 
-                            group-hover:[transform:rotateX(180deg)]">
-              {/* FRONT */}
-              <div className="absolute inset-0 bg-white text-black rounded-b-4xl 
-                              flex items-center justify-center 
-                              [backface-visibility:hidden] shadow-lg">
-                <p className="font-semibold text-3xl">Keep in touch with me here!</p>
-              </div>
-              {/* BACK */}
-              <div className="absolute inset-0
-                              bg-text-primary rounded-b-4xl 
-                              flex items-center justify-center gap-4
-                              [transform:rotateX(180deg)] 
-                              [backface-visibility:hidden]">
-                {SocialLinks.map(({src, alt, href}) => (
-                  <SocialIcon 
-                    key={href} 
-                    src={src}
-                    alt={alt}
-                    href={href} 
-                  />
-                ))}
-              </div>
+    <footer className="p-3 border-t border-gray-800border-t border-gray-800">
+      <div className="border-4 rounded-b-4xl">
+        <div className="group perspective">
+          <div className="relative p-2 transition-transform duration-700 
+                          [transform-style:preserve-3d] 
+                          group-hover:[transform:rotateX(180deg)]">
+            {/* FRONT */}
+            <div className="absolute inset-0 bg-white text-black rounded-b-4xl 
+                            flex items-center justify-center 
+                            [backface-visibility:hidden] shadow-lg">
+              <p className="font-semibold text-3xl">Keep in touch with me here!</p>
+            </div>
+            {/* BACK */}
+            <div className="absolute inset-0
+                            bg-text-primary rounded-b-4xl 
+                            flex items-center justify-center gap-4
+                            [transform:rotateX(180deg)] 
+                            [backface-visibility:hidden]">
+              {SocialLinks.map(({src, alt, href}) => (
+                <SocialIcon 
+                  key={href} 
+                  src={src}
+                  alt={alt}
+                  href={href} 
+                />
+              ))}
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div className="text-text-secondary">
+        {new Date().getFullYear()} Nathan Shalamberidze
+      </div>
     </footer>
-    // {new Date().getFullYear()} Nathan Shalamberidze
   );
 }

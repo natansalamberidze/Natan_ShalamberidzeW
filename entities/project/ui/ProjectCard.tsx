@@ -3,7 +3,7 @@ import { Project } from "@/entities/project/project_type";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="grid grid-cols-(--my-grid-cols) gap-1 hover:shadow-(--my-shadowform) rounded-2xl">
+    <div className="grid grid-cols-(--my-grid-cols) gap-1 hover:shadow-(--my-shadowform) rounded-2xl ">
       <div className="col-start-1 col-end-2 row-start-1 row-end-3 content-center justify-items-center rounded-2xl">
         <Image
           className=""
@@ -13,10 +13,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           height={200}
         />
       </div>
-      <div className="place-content-center justify-items-center">
+      <div className="place-content-center justify-items-center text-text-primary">
         <h2 className="">{project.title}</h2>
       </div>
-      <div className="content-center justify-items-center">
+      <div className="content-center justify-items-center text-text-primary">
         <p className="">{project.description}</p>
       </div>
       <div className="col-start-2 col-end-4 row-start-2">
