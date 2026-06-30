@@ -3,10 +3,10 @@ import { Project } from "@/entities/project/project_type";
 export const projects: Project[] = [
   {
     id: 1,
-    slug: "My own Website",
-    title: "My own Website",
+    slug: "to-do-list",
+    title: "To-Do List",
     description:
-      "Personal portfolio website using ..., and modern front-end technologies.",
+      "A custome to-do list app with a clean and intuitive user interface",
     stack: [
       { id: "react", name: "React", icon: "/images/react.svg" },
       { id: "next", name: "Next.js", icon: "/images/react.svg" },
@@ -14,20 +14,15 @@ export const projects: Project[] = [
       { id: "gg", name: "TypeScript", icon: "/images/react.svg" },
       { id: "gh", name: "TypeScript", icon: "/images/react.svg" },
       { id: "gj", name: "TypeScript", icon: "/images/react.svg" },
-      { id: "gk", name: "TypeScript", icon: "/images/react.svg" },
-      { id: "gl", name: "TypeScript", icon: "/images/react.svg" },
-      { id: "gz", name: "TypeScript", icon: "/images/react.svg" },
-      { id: "gx", name: "TypeScript", icon: "/images/react.svg" },
-      { id: "gv", name: "TypeScript", icon: "/images/react.svg" },
     ],
-    image: "/images/react.svg",
+    image: "/images/todo.png",
   },
   {
     id: 2,
-    slug: "Task-manager",
-    title: "Task Manager",
+    slug: "Fitness page",
+    title: "Fitness page",
     description:
-      "A task management app with a focus on UX and clean architecture.",
+      "Landing page for a fitness center, showcasing their services, trainers, and facilities",
     stack: [
       { id: "react", name: "React", icon: "/images/react.svg" },
       { id: "next", name: "Next.js", icon: "/images/react.svg" },
@@ -35,6 +30,6 @@ export const projects: Project[] = [
       { id: "td", name: "TypeScript", icon: "/images/react.svg" },
       { id: "ta", name: "TypeScript", icon: "/images/react.svg" },
     ],
-    image: "/images/react.svg",
+    image: "/images/fitnes.png",
   },
 ];

@@ -6,9 +6,8 @@ interface SkillItemProps {
 
 export default function SkillItem({ skill }: SkillItemProps) {
   return (
-    <li className="flex items-center gap-1 rounded-xl bg-zinc-900 p-1 hover:shadow-xl">
-      <span className="size-0.5 rounded-full bg-accent-pink"/>
-      <p className="text-zinc-200">
+    <li className="rounded-xl bg-zinc-900 p-1 hover:shadow-xl">
+      <p className="text-zinc-200 relative pl-3 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-1 before:w-1 before:rounded-full before:bg-accent-pink">
         {skill.text}
       </p>
     </li>

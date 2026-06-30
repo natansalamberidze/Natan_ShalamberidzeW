@@ -46,6 +46,7 @@ select {
 
   --my-transform: scale(1.05);
   --my-shadowform: 6px 6px 12px;
+  --my-shadowinsideform: -4px -4px 12px;
 
   --my-grid-cols: [start] 1fr [middle-before] 1fr [middle-after] 1fr [end];
 }
