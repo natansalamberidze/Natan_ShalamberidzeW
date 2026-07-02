@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function OwnCustomSection() {
   return (
-    <section className="relative">
+    <section id="custom" className="relative">
       <div className="tear absolute">
         <div className="bg-text-primary rounded-full w-9 h-9 rounded-bl-4xl"></div>
       </div>

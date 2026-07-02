@@ -1,14 +1,19 @@
 'use client';
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
-import { useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { usePathname } from "next/navigation";
 
-export default function Header() {
+interface HeaderLink {
+  label: string;
+  href: string;
+}
+
+export default function Header({ links }: { links: HeaderLink[] }) {
+
+  const pathname = usePathname();
   const [ isScrolled, setIsScrolled ] = useState(false);
-
   const navRef = useRef<HTMLDivElement | null>(null);
-
   const [style, setStyle] = useState({
     width: '100%',
     x: 0,
@@ -84,31 +89,29 @@ export default function Header() {
     <div className={`flex fixed top-0 left-0 right-0 z-1 justify-start bg-bg-primary/80 backdrop-blur-md 
       ${ isScrolled ? 'shadow-(--my-shadowform)' : 'shadow-none'}
     `}>
-      <nav ref={navRef} className="relative flex gap-10" >
-        <Link href="/" 
+      <nav ref={navRef} className="relative flex gap-10">
+        <Link href="/"
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0});
+          }}}
           onMouseEnter = {handleHover} 
           onMouseLeave = {handleLeave}
-          className="font-bold p-2 rounded-full">
+          className="font-bold p-2 rounded-full scroll-pt-20">
             Nathan Shalamberidze
         </Link>
-        <Link href="#projects" 
-          onMouseEnter = {handleHover}
-          onMouseLeave = {handleLeave}
-          className="relative font-bold p-2 hover:bg-bg-secondary rounded-b-lg cursor-pointer">
-            Projects
-        </Link>
-        <Link href="#skills"
-          onMouseEnter = {handleHover}
-          onMouseLeave={handleLeave}
-          className="relative font-bold p-2 hover:bg-bg-secondary rounded-b-lg cursor-pointer">
-            Skills
-        </Link>
-        <Link href="#contact"
-          onMouseEnter = {handleHover}
-          onMouseLeave={handleLeave} 
-          className="relative font-bold p-2 hover:bg-bg-secondary rounded-b-lg cursor-pointer">
-            Contact
-        </Link>
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleLeave}
+            className="font-bold p-2 hover:bg-bg-secondary rounded-b-lg"
+          >
+            {link.label}
+          </Link>
+        ))}
       </nav>
       {/* <div className="nav-wave text-accent-pink" style={style}></div> */}
         <motion.div

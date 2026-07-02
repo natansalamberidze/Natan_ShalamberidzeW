@@ -26,7 +26,7 @@ function SocialIcon({ src, alt, href }: Icons) {
 
 export default function Footer() {
   return (
-    <footer className="p-3 border-gray-800">
+    <footer id="find-me" className="p-3 border-gray-800">
       <div className="p-3 border-4 border-gray-800">
         <div className="border-4 rounded-b-4xl">
           <div className="group perspective">

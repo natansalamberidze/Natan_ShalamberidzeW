@@ -3,10 +3,7 @@ import SkillsColumn from "@/pages/home/sections/SkillsColumn"
 
 export default function SkillsSection() {
   return (
-    <section 
-      id="skills" 
-      className="py-5"
-    >
+    <section id="skills" className="py-5 scroll-mt-2">
       <div className="grid md:grid-cols-2 gap-6">
         {skills.map(category => (
           <SkillsColumn

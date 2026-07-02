@@ -1,10 +1,19 @@
 import Container from "@/app/Container";
+import Header from "@/widgets/layout/Header";
 import Link from "next/link";
+
+const contactLinks = [
+  { label: "Projects", href: "/projects" }, 
+];
 
 export default function ContactPage() {
   return (
     <Container>
-      <h1 className="text-3xl font-bold">Contact</h1>
+    <Header links={contactLinks}/>
+
+      <h1 className="text-3xl font-bold">
+        Contact
+      </h1>
 
       <p className="max-w-xl text-gray-400">
         If you'd like to discuss a project, collaboration, or just say hello —

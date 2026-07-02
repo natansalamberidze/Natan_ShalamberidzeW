@@ -4,10 +4,7 @@ import { projects } from "@/entities/project/model/projects";
 
 export default function ProjectCardSection() {
   return (
-    <section 
-      id="projects" 
-      className="py-2 grid gap-4"
-    >
+    <section id="projects" className="py-2 grid gap-4 scroll-mt-14">
       {projects.map((project) => (
         <ProjectCard 
           key={project.id} 

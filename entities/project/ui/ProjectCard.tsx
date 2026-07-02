@@ -6,7 +6,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     <div className="grid grid-cols-(--my-grid-cols) gap-1 hover:shadow-(--my-shadowform) rounded-2xl ">
       <div className="col-start-1 col-end-2 row-start-1 row-end-3 p-1">
         <Image
-          className="h-full w-full object-cover border-2 border-purple-400 rounded-2xl"
+          className="h-full w-full object-cover border-2 border-purple-400 rounded-2xl hover:scale-200 "
           src={project.image}
           alt={project.title}
           width={500}

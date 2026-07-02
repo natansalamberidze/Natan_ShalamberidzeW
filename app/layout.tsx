@@ -2,10 +2,11 @@ import './global.css';
 import Footer from "@/widgets/layout/Footer";
 import Header from "@/widgets/layout/Header";
 
-export const metadata = {
-  title: "Mr Nathan Shalamberidze — Portfolio",
-  description: "Frontend Developer Portfolio",
-};
+const homeLinks = [
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Find me", href: "#find-me" },
+];
 
 export default function RootLayout({
   children,
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
       <html lang="en">
         <body className="pt-7 bg-bg-primary ">
-          <Header />
+          <Header 
+            links={homeLinks}
+          />
             <main className="min-h-32 ">
               {children}
             </main>
