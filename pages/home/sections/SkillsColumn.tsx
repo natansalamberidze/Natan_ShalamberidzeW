@@ -1,5 +1,5 @@
 import SkillItem from '@/entities/skill/ui/SkillItem'
-import { SkillCategory } from '@/entities/skill/skills_type'
+import { SkillCategory } from '@/entities/skill/model/skills_type'
 
 interface SkillsColumnProps {
   category: SkillCategory

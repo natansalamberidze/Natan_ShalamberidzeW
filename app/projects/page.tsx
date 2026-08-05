@@ -1,7 +1,7 @@
 import Container from "@/app/Container";
 import ProjectCard from "@/entities/project/ui/ProjectCard";
 import { projects } from "@/entities/project/model/projects";
-import Header from "@/widgets/layout/Header";
+import Header from "@/widgets/layout/ui/Header";
 
 const projectLinks = [
   { label: "Contacts", href: "/contact" }, 

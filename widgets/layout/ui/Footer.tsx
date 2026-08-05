@@ -31,23 +31,23 @@ export default function Footer() {
         <div className="border-4 rounded-b-4xl">
           <div className="group perspective">
             <div className="relative p-2 transition-transform duration-700 
-                            [transform-style:preserve-3d] 
-                            group-hover:[transform:rotateX(180deg)]">
+                            transform-3d
+                            group-hover:transform-[rotateX(180deg)]">
               {/* FRONT */}
               <div className="absolute inset-0 bg-white text-black rounded-b-4xl 
                               flex items-center justify-center 
-                              [backface-visibility:hidden] shadow-lg">
+                              backface-hidden shadow-lg">
                 <p className="font-semibold text-3xl">Keep in touch with me here!</p>
               </div>
               {/* BACK */}
               <div className="absolute inset-0
                               bg-text-primary rounded-b-4xl 
                               flex items-center justify-center gap-4
-                              [transform:rotateX(180deg)] 
-                              [backface-visibility:hidden]">
+                              transform-[rotateX(180deg)] 
+                              backface-hidden">
                 {SocialLinks.map(({src, alt, href}) => (
                   <SocialIcon 
-                    key={href} 
+                    key={href}
                     src={src}
                     alt={alt}
                     href={href} 

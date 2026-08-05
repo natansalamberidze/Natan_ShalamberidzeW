@@ -1,4 +1,4 @@
-import { Skill } from '@/entities/skill/skills_type'
+import { Skill } from '../model/skills_type';
 
 interface SkillItemProps {
   skill: Skill

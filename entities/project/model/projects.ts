@@ -1,4 +1,4 @@
-import { Project } from "@/entities/project/project_type";
+import { Project } from "@/entities/project/model/project_type";
 
 export const projects: Project[] = [
   {

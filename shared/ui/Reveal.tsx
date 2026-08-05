@@ -12,7 +12,10 @@ export default function Reveal({ children, delay = 0 }: ScrollProps) {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ 
+        once: true, 
+        margin: "-100px" 
+      }}
       transition={{ delay }}
       variants={{
         hidden: {

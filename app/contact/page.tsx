@@ -1,5 +1,5 @@
 import Container from "@/app/Container";
-import Header from "@/widgets/layout/Header";
+import Header from "@/widgets/layout/ui/Header";
 import Link from "next/link";
 
 const contactLinks = [
