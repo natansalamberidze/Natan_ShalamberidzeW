@@ -1,13 +1,13 @@
 'use client';
 import Link from "next/dist/client/link";
 import Image from "next/image";
+import ReusableButton from "@/shared/ui/ReusableButton";
 import { Icons } from "@/widgets/layout/icon_type";
 import { SocialLinks } from "@/widgets/layout/model/icontypes";
 
 function SocialIcon({ src, alt, href }: Icons) {
   return (
-    <div className="w-3 h-3 relative transition-transform 
-                    duration-200 hover:scale-110">
+    <div className="w-3 h-3 relative transition-transform duration-200 hover:scale-110">
       <Link 
         href={href} 
         target="_blank"
@@ -27,24 +27,23 @@ function SocialIcon({ src, alt, href }: Icons) {
 export default function Footer() {
   return (
     <footer id="find-me" className="p-3 border-gray-800">
-      <div className="p-3 border-4 border-gray-800">
+      <div className="flex gap-2 p-1 text-2xl">
+        <ReusableButton href="/contact" text="See all projects" 
+          className="" 
+        />
+      </div>
+      <div className="p-2 border-4 border-gray-800">
         <div className="border-4 rounded-b-4xl">
           <div className="group perspective">
-            <div className="relative p-2 transition-transform duration-700 
-                            transform-3d
-                            group-hover:transform-[rotateX(180deg)]">
-              {/* FRONT */}
-              <div className="absolute inset-0 bg-white text-black rounded-b-4xl 
-                              flex items-center justify-center 
-                              backface-hidden shadow-lg">
-                <p className="font-semibold text-3xl">Keep in touch with me here!</p>
+            <div className="relative p-2 transition-transform duration-700 transform-3d group-hover:transform-[rotateX(180deg)]">
+              {/* Front side */}
+              <div className="absolute inset-0 bg-white text-black rounded-b-4xl flex items-center justify-center backface-hidden shadow-lg">
+                <p className="font-semibold text-3xl">
+                  Keep in touch with me here!
+                </p>
               </div>
-              {/* BACK */}
-              <div className="absolute inset-0
-                              bg-text-primary rounded-b-4xl 
-                              flex items-center justify-center gap-4
-                              transform-[rotateX(180deg)] 
-                              backface-hidden">
+              {/* Back side */}
+              <div className="absolute inset-0 bg-text-primary rounded-b-4xl flex items-center justify-center gap-4 transform-[rotateX(180deg)] backface-hidden">
                 {SocialLinks.map(({src, alt, href}) => (
                   <SocialIcon 
                     key={href}
@@ -58,8 +57,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       <div className="text-text-secondary">
-        {new Date().getFullYear()} Nathan Shalamberidze
+        {new Date().getFullYear()} Natans Šalamberidze aka Nathan Shalamberidze
       </div>
     </footer>
   );

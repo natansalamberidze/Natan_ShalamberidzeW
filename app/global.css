@@ -121,10 +121,13 @@ select {
 @theme {
   --color-black: #272d46;
   --color-pink: #c09cc4;
+  --color-dark-gray:#2e2e2e;
   --color-gray:#1F2833;
   --color-light-gray:#C5C6C7;
   --color-light-turquoise:#66FCF1;
-  --color-dark-turquoise:#45A29E
+  --color-dark-turquoise:#45A29E;
+  --color-blue:#00bfff;
+  --color-light-blue:#00bfff;
 }
 
 @theme {

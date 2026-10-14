@@ -52,17 +52,10 @@ export default function AutoRobotMouth() {
     setIsLoading(true);
     initAudioContext();
     const clientID = process.env.NEXT_PUBLIC_JAMENDO_CLIENT_ID;
-    if (!clientID) {
-      console.log('Jamendo ID missing. Using fallback.');
-      setTrackTitle('Paul Kalkbrenner - Sky and Sand (Local)');
-      playAudio('/audio/kalkbrenner.mp3');
-      setIsLoading(false);
-      return;
-    }
 
     try {
       // Using the Next.js route stopper to bypass CORS in the future
-      const res = await fetch(`https://api.jamendo.com/v3.0/tracks/?client_id=${clientID}&format=json&limit=50&include=musicinfo&audioformat=mp32&tags=Classical+Jazz`);
+      const res = await fetch(`htps://api.jamendo.com/v3.0/tracks/?client_id=${clientID}&format=json&limit=50&include=musicinfo&audioformat=mp32&tags=Classical+Jazz`);
       const data = await res.json();
       if (!data.results?.length) 
         throw new Error('No tracks found');
@@ -71,9 +64,8 @@ export default function AutoRobotMouth() {
       setTrackTitle(`${track.artist_name} - ${track.name}`);
       playAudio(track.audio);
     } catch (err) {
-      console.error('API Error, standard fallback:', err);
-      setTrackTitle('Local Track - Fallback');
-      playAudio('/audio/track.mp3');
+      setTrackTitle('Boris Brejcha - Entertainment');
+      playAudio('/audio/BorisBrejcha.mp3');
     } finally {
       setIsLoading(false);
     }
@@ -133,6 +125,26 @@ export default function AutoRobotMouth() {
 
   return (
     <div className="flex flex-col justify-center items-center gap-1 p-2">
+      <div className="flex gap-2 p-1">
+        <Button
+          className="border-4 border-purple-400 px-3 py-2 cursor-pointer text-text-primary"
+          onClick={isPlaying ? fetchAndPlayMusic : trackTitle ? resumeAudio : fetchAndPlayMusic} 
+          disabled={isLoading} 
+          variant="ghost" 
+          size="xs"
+        >
+          {isLoading ? 'Loading...' : isPlaying ? 'Next Track' : trackTitle ? 'Resume' : 'Play'}
+        </Button>
+        <Button
+          className="border-4 border-purple-400 px-3 py-2 cursor-pointer text-text-primary"
+          onClick={pauseMusic} 
+          variant="ghost" 
+          size="xs" 
+          disabled={!isPlaying}
+        >
+          Pause
+        </Button>
+      </div>
       <div className="flex items-center justify-center gap-2 h-10 w-40 p-5 bg-slate-950 rounded-2xl border border-slate-800 shadow-inner">
         {scales.map((scale, index) => (
           <motion.div
@@ -149,25 +161,6 @@ export default function AutoRobotMouth() {
           {trackTitle}
         </p>
       )}
-
-      <div className="flex gap-2 w-full mt-2">
-        <Button 
-          onClick={isPlaying ? fetchAndPlayMusic : trackTitle ? resumeAudio : fetchAndPlayMusic} 
-          disabled={isLoading} 
-          variant="ghost" 
-          size="xs"
-        >
-          {isLoading ? 'Loading...' : isPlaying ? 'Next Track' : trackTitle ? 'Resume' : 'Play'}
-        </Button>
-        <Button 
-          onClick={pauseMusic} 
-          variant="ghost" 
-          size="xs" 
-          disabled={!isPlaying}
-        >
-          Pause
-        </Button>
-      </div>
     </div>
   );
 }

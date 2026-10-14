@@ -10,16 +10,13 @@ export default function ContactPage() {
   return (
     <Container>
     <Header links={contactLinks}/>
-
-      <h1 className="text-3xl font-bold">
-        Contact
+      <h1 className="text-3xl text-text-secondary">
+        A little about me to get to know me better.
       </h1>
-
       <p className="max-w-xl text-gray-400">
         If you'd like to discuss a project, collaboration, or just say hello —
         feel free to reach out.
       </p>
-
       <ul className="space-y-4">
         <li>
           <span className="text-gray-500">Email:</span>{" "}
@@ -27,7 +24,6 @@ export default function ContactPage() {
             natans.salamberidze@gmail.com
           </a>
         </li>
-
         <li>
           <span className="text-gray-500">GitHub:</span>{" "}
           <Link
