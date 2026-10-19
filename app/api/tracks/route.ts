@@ -1,19 +1,33 @@
-// import { NextResponse } from 'next/server';
+// import { NextResponse, NextRequest } from 'next/server';
 
-// export async function GET() {
-//   const clientID = process.env.NEXT_PUBLIC_JAMENDO_CLIENT_ID;
+// // Мок локальной базы данных треков (хранятся в public/audio/)
+// const LOCAL_TRACKS = [
+//   { artist_name: 'Boris', name: 'Entertainment', audio: '/audio/BorisBrejcha.mp3' },
+//   { artist_name: 'Boris', name: 'Live Performance', audio: '/audio/Live.mp3' },
+// ];
 
-//   if (!clientID) {
-//     return NextResponse.json({ error: 'Jamendo client ID is missing' }, { status: 500 });
+// export async function GET(request: NextRequest) {
+//   const { searchParams } = new URL(request.url);
+//   const source = searchParams.get('source') || 'remote';
+
+//   if (source === 'local') {
+//     return NextResponse.json({ results: LOCAL_TRACKS });
 //   }
 
-//   const url = `https://api.jamendo.com/v3.0/tracks/?client_id=${clientID}&format=json&limit=50&include=musicinfo&audioformat=mp32&tags=Classical+Jazz`;
+//   const clientID = process.env.JAMENDO_CLIENT_ID;
+//   if (!clientID) {
+//     return NextResponse.json({ error: 'API key missing' }, { status: 500 });
+//   }
+
+//   const url = `https://jamendo.com{clientID}&format=json&limit=50&include=musicinfo&audioformat=mp32&tags=Classical+Jazz`;
 
 //   try {
-//     const res = await fetch(url);
+//     const res = await fetch(url, { next: { revalidate: 60 } });
+//     if (!res.ok) throw new Error('Jamendo error');
 //     const data = await res.json();
 //     return NextResponse.json(data);
-//   } catch (error) {
-//     return NextResponse.json({ error: 'Failed to fetch tracks' }, { status: 500 });
+//   } catch {
+//     // Если удаленный API упал, мягко отдаем локальный фолбек
+//     return NextResponse.json({ results: LOCAL_TRACKS });
 //   }
 // }

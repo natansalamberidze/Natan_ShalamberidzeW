@@ -3,7 +3,7 @@ import Footer from "@/widgets/layout/ui/Footer";
 import Header from "@/widgets/layout/ui/Header";
 import { Figtree } from "next/font/google";
 import { cn } from "@/shared/lib/utils";
-import ScrollToTop from '@/shared/ui/ScrollToTop';
+import ScrollToTop from '@/shared/hooks/ScrollToTop';
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
