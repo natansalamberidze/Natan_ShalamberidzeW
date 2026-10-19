@@ -3,7 +3,7 @@ import Container from "@/app/Container";
 import SkillSection from "@/pages/home/sections/SkillsSection";
 import ProjectCardSection from "@/widgets/projects-section/ui/ProjectCardSection";
 import GreetingSection from "@/pages/home/sections/GreetingSection";
-import OwnCustomSection from "@/pages/home/sections/OwnCustomSection";
+import OwnCustomSection from "@/pages/home/sections/CustomSection";
 
 export const metadata: Metadata = {
   title: "Nathan Shalamberidze — Frontend Developer",

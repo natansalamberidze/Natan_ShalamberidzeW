@@ -1,12 +1,15 @@
+'use client';
 import Image from "next/image";
 import { Project } from "@/entities/project/model/project_type";
 
-export default function ProjectCard({ project }: { project: Project }) {
+
+export default function ProjectCard({ project, onImageClick }: { project: Project, onImageClick: (imageUrl: string) => void;}) {
   return (
-    <div className="grid grid-cols-(--my-grid-cols) gap-1 hover:shadow-(--my-shadowform) rounded-2xl ">
-      <div className="col-start-1 col-end-2 row-start-1 row-end-3 p-1">
+    <div className="grid grid-cols-(--my-grid-cols) gap-1 hover:shadow-(--my-shadowform) rounded-2xl">
+      <div className="col-start-1 col-end-2 row-start-1 row-end-3 p-1" 
+        onClick={() => onImageClick(project.image)}>
         <Image
-          className="h-full w-full object-cover border-2 border-purple-400 rounded-2xl hover:scale-200 "
+          className="h-full w-full object-cover border-2 border-purple-400 rounded-2xl hover:scale-150 duration-500"
           src={project.image}
           alt={project.title}
           width={500}
@@ -20,10 +23,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="text-text-primary">{project.description}</p>
       </div>
       <div className="col-start-2 col-end-4 row-start-2 max-w-max">
-        <ul className="flex justify-start rounded-4xl gap-1 p-1">
+        <ul className="flex flex-wrap justify-start rounded-4xl gap-1 p-1">
           {project.stack.map((tech) => (
             <li
-              className="w-5 h-5 overflow-hidden rounded-full border-2 border-purple-400 flex-wrap p-1 hover:shadow-(--my-shadowinsideform)"
+              className="w-5 h-5 overflow-hidden rounded-full border-2 border-purple-400 p-1 hover:border-white duration-500"
               key={tech.id}
               title={tech.name}
             >

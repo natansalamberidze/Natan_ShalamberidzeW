@@ -1,5 +1,6 @@
 import { skills } from '@/entities/skill/model/skills'
 import SkillsColumn from "@/pages/home/sections/SkillsColumn"
+import ReusableButton from '@/shared/ui/ReusableButton'
 
 export default function SkillsSection() {
   return (
@@ -11,6 +12,9 @@ export default function SkillsSection() {
             category={category}
           />
         ))}
+      </div>
+      <div className="gap-2 p-1 text-2xl">
+        <ReusableButton href="/contact" text="About me!" className=""/>
       </div>
     </section>
   )

@@ -27,11 +27,6 @@ function SocialIcon({ src, alt, href }: Icons) {
 export default function Footer() {
   return (
     <footer id="find-me" className="p-3 border-gray-800">
-      <div className="flex gap-2 p-1 text-2xl">
-        <ReusableButton href="/contact" text="See all projects" 
-          className="" 
-        />
-      </div>
       <div className="p-2 border-4 border-gray-800">
         <div className="border-4 rounded-b-4xl">
           <div className="group perspective">

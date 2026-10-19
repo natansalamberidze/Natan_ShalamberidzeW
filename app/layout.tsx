@@ -3,6 +3,7 @@ import Footer from "@/widgets/layout/ui/Footer";
 import Header from "@/widgets/layout/ui/Header";
 import { Figtree } from "next/font/google";
 import { cn } from "@/shared/lib/utils";
+import ScrollToTop from '@/shared/ui/ScrollToTop';
 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
       <html lang="en" className={cn("font-sans", figtree.variable)}>
         <body className="pt-7 bg-bg-primary ">
+          <ScrollToTop />
           <Header 
             links={homeLinks}
           />
